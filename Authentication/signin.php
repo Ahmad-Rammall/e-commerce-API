@@ -16,8 +16,6 @@ $num_rows = $query->num_rows;
 $query->bind_result($userId, $type, $stored_password);
 $query->fetch();
 
-
-
 $expTime = time() + 3600;
 
 if ($num_rows > 0 && password_verify($password, $stored_password)) {
@@ -30,7 +28,6 @@ if ($num_rows > 0 && password_verify($password, $stored_password)) {
         $num_rows = $query->num_rows;
         $query->bind_result($sellerId);
         $query->fetch();
-        echo 'seller';
 
         $payload = [
             'userId' => $userId,
